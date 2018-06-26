@@ -1,7 +1,7 @@
 # Python basics course - The kick-start for learning on your own
 
-Signup via google form [here](https://goo.gl/forms/C6sXQljaYCFDLZoC2).
-
+This is just an announcement for Summer courses 2018.
+Everything needed to learn is here: [https://github.com/archclassroom/python-beginners](https://github.com/archclassroom/python-beginners)
 
 ## What to expect:
 * some short presentation about how stuff works and then learning by doing
@@ -38,9 +38,4 @@ h functional USB port to boot flash with Arch Linux from, so even notebooks with
 xperience with those products.
 
 ## Resources:
-* Books
-    *  Already mentioned [Dive into Python 3](http://www.diveintopython3.net/) ([CZ verze](http://diveintopython3.py.cz/index.html))
-    *  [Tons of others](https://pythonbooks.revolunet.com/)
-    *  Recommendations will follow
-* Videos
-    * [Corey's Shaffer](https://www.youtube.com/playlist?list=PL-osiE80TeTt2d9bfVyTiXJA-UTHn6WwU) video tutorials
+Go look at [https://github.com/archclassroom/python-beginners](https://github.com/archclassroom/python-beginners)
