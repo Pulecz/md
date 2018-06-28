@@ -33,9 +33,7 @@ Everything needed to learn is here: [https://github.com/archclassroom/python-beg
 ## Requirements:
 * free time
 * patience
-* Ideally Arch Linux installed otherwise any RPM based or Deb based Linux distribution (Fedora Red Hat) or any deb based (Debian, Linux Mint, Ubuntu) or Windows 7+ PC OR any 2006+ laptop wit
-h functional USB port to boot flash with Arch Linux from, so even notebooks without HDDs will work. You can try with some Apple product (MAC) but don't expect much support, since I have no e
-xperience with those products.
+* Ideally Arch Linux installed otherwise any RPM based or Deb based Linux distribution (Fedora Red Hat) or any deb based (Debian, Linux Mint, Ubuntu) or Windows 7+ PC OR any 2006+ laptop with functional USB port to boot flash with Arch Linux from, so even notebooks without HDDs will work. You can try with some Apple product (MAC) but don't expect much support, since I have no experience with those products.
 
 ## Resources:
 Go look at [https://github.com/archclassroom/python-beginners](https://github.com/archclassroom/python-beginners)
