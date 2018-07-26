@@ -13,4 +13,5 @@ There are many other options, such as [Pelican](http://docs.getpelican.com/en/st
 * [arch_zsh](content/arch_zsh)
 * [i3](content/i3)
 * [python_edu](content/python_edu)
+* [python_edu_cz](content/python_edu_cz)
 * [todo01_content_listing](content/todo01_content_listing)
