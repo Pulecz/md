@@ -94,7 +94,7 @@ There is also option to make [/boot encrypted](https://wiki.archlinux.org/index.
 I use gdisk for partitioning, make sure you are editing the correct drive.
 * Make the +1M BIOS boot partition(ef02) (for BIOS boot) or +200M EFI system(ef00) (for UEFI boot).
 * Make boot partition, at least +256M, can be regular Linux filesystem (8300).
-* Then rest of the space can be regular Linux filesystem (8300) as well.
+* Then rest of the space is for Linux LVM (8e00).
 * Save the changes and mkfs.vfat on EFI system (BIOS boot does not need a filesystem), mkfs.ext4 on boot partition.
 * Then continue with [LVM_on_LUKS](https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS) encryption how-to.
 The *Configuring mkinitcpio* and *Configuring the boot loader* steps do after you can chroot to new system.
@@ -133,9 +133,10 @@ You might want to make sure the efivars are mounted as read only after you insta
 You will probably want to edit pacman mirrors again and install basic stuff like so:
 
 ```
-# pacman -S zsh vim tmux sudo mc htop grub efibootmgr
+# pacman -S zsh zsh-grml-config vim tmux sudo mc htop grub efibootmgr
 ```
 * zsh - smart shell
+* grml-zsh-config - grml's zsh config (the one archiso uses)
 * vim - improved vi
 * tmux - better screen
 * sudo - for "admin" stuff
@@ -162,6 +163,8 @@ Replace the *device-UUID* with one from:
 
 Use the physical UUID of the encrypted partition.
 
+**tip**: save the output of ls to some file, edit it to be just the UUID of the physical drive you encrypted and then while editing /etc/default/grub use vim command :r *path_to_file_with_UUID* to *paste* in the UUID
+
 Then run:
 ```
 # mkinitcpio -p linux
@@ -182,9 +185,13 @@ Where $dev is /dev/sda or in Lenovo T470s case the ssd /dev/nvme0n1.
 This will create configuration for grub based on those defaults with cryptdevice, you can ignore lvmetad warnings, this is normal for lvm.
 If you wrote incorrect UUID in the defaults and system fails to boot, you will have to edit the defaults and make config again.
 
-***note2***: there are more options for [grub-install](https://wiki.archlinux.org/index.php/GRUB#Installation_2)) for this case defaults are ok.
+***note2***: there are more options for [grub-install](https://wiki.archlinux.org/index.php/GRUB#Installation_2) for this case defaults are ok.
 
 Change root password, then [create regular user in wheel group](https://wiki.archlinux.org/index.php/users_and_groups#User_management), and allow wheels group in sudoers
+
+```
+# useradd -m -g wheel -G power,audio,games -s /usr/bin/zsh user
+```
 
 ```
 # EDITOR=vim visudo
